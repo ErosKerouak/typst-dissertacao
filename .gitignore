@@ -1,0 +1,20 @@
+# Arquivos de saída
+output/
+*.pdf
+
+# Pastas de ambientes Conda ou virtuais
+.env/
+.venv/
+env/
+venv/
+__pycache__/
+
+# Arquivos de cache do Typst (por precaução futura)
+*.typ~    # arquivos temporários (se algum editor salvar assim)
+
+# Arquivos do VS Code (opcional)
+.vscode/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db

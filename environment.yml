@@ -1,0 +1,5 @@
+name: typst-dissertacao
+channels:
+  - conda-forge
+dependencies:
+  - typst

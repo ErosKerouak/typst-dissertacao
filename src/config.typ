@@ -1,0 +1,11 @@
+#let titulo = "Título da Dissertação"
+#let subtitulo = none  // ou: "Subtítulo opcional"
+#let autor = "Eros K. Cordeiro Pereira"
+#let orientador = "Prof. Dr. Fulano de Tal"
+#let coorientador = none
+#let instituicao = "Universidade Federal do Paraná"
+#let programa = "Programa de Pós-Graduação em Geologia"
+#let cidade = "Curitiba"
+#let estado = "PR"
+#let ano = 2025
+#let mes = "Julho"
