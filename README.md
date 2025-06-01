@@ -1,7 +1,7 @@
 
 ---
 
-````markdown
+
 # Template Typst para Dissertação 
 
 Este repositório contém um template modular, limpo e versionado para escrever dissertações acadêmicas utilizando [Typst](https://typst.app), uma linguagem de marcação tipográfica moderna.
