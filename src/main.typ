@@ -2,7 +2,7 @@
 
 O presente trabalho tem como objetivo principal integrar dados gravimétricos terrestres e satelitais para gerar um modelo geofísico que permita investigar as heterogeneidades estruturais e composicionais em subsuperfície. Um desafio metodológico significativo, em razão das diferenças intrínsecas entre esses dois tipos de dados. 
 
-Uma área correspondente a Província Mantiqueira Meridional (sul do Brasil), foi selecionada como estudo de caso (FIGURA @mapa_de_localização). Inicialmente, foram realizadas a compilação e o pré-processamento dos dados gravimétricos terrestres e satelitais disponíveis para a região. Foram utilizados dois conjuntos de dados satelitais: uma grade regular definida em altitude geodésica constante e os valores estimados diretamente nos pontos de observação terrestre $P(phi, lambda, h)$. Os valores interpolados pelo método das fontes equivalentes \citep{dampney1969equivalent, cooper2000gridding, Soler2021} correspondem às diferenças entre os dados terrestres e os dados satelitais em cada ponto $P(phi, lambda, h)$. Para a determinação dos parâmetros ótimos de interpolação por fontes equivalentes (\textit{depth} e \textit{damping}), foi empregada validação cruzada do tipo \textit{k-fold} \citep{Roberts2017}. A grade final integrada foi obtida a partir da soma do produto da interpolação das diferenças com a grade satelital em altitude constante. 
+Uma área correspondente a Província Mantiqueira Meridional (sul do Brasil), foi selecionada como estudo de caso (FIGURA @mapa_de_localização). Inicialmente, foram realizadas a compilação e o pré-processamento dos dados gravimétricos terrestres e satelitais disponíveis para a região. Foram utilizados dois conjuntos de dados satelitais: uma grade regular definida em altitude geodésica constante e os valores estimados diretamente nos pontos de observação terrestre $P(phi, lambda, h)$. Os valores interpolados pelo método das fontes equivalentes (@dampney1969equivalent, @cooper2000gridding, @Soler2021) correspondem às diferenças entre os dados terrestres e os dados satelitais em cada ponto $P(phi, lambda, h)$. Para a determinação dos parâmetros ótimos de interpolação por fontes equivalentes (_depth_ e _damping_), foi empregada validação cruzada do tipo _k-fold_ @Roberts2017. A grade final integrada foi obtida a partir da soma do produto da interpolação das diferenças com a grade satelital em altitude constante. 
 
 #figure(
   image("../figures/mapa_localização.png", width: 90%),
@@ -10,12 +10,10 @@ Uma área correspondente a Província Mantiqueira Meridional (sul do Brasil), fo
 ) <mapa_de_localização>
 
 
-A gravidade teorica foi calculada para cada celulda da grade, gerando-se o distúrbio da gravidade. Para as correções de terreno e \textit{backstripping}, a topografia e as camadas sedimentares foram discretizadas em prismas, modelados a partir de modelos digitais de elevação e dados de espessura dos sedimentos. Essas correções, que mais tradicionalmente são aplicada às anomalias de Ar Livre, foram aplicada ao distúrbio da gravidade, resultando no chamado Distúrbio de Bouguer. Conforme definido por \citet{segawa1984gravity}, essa é uma adaptação do conceito tradicional de anomalia de Bouguer para distúrbios da gravidade em vez de anomalias de Ar Livre, proporcionando uma leitura mais precisa do campo de gravidade, menos afetada pelas ondulações do geoide e mais diretamente relacionada às variações de densidade subterrâneas \citep{segawa1984gravity}. Para completar as coreções, a interface crustal Moho também foi estimada com base na hipótese de Airy e modelada com tesseróides para a realização da correção isostática.
+A gravidade teorica foi calculada para cada celulda da grade, gerando-se o distúrbio da gravidade. Para as correções de terreno e _backstripping_, a topografia e as camadas sedimentares foram discretizadas em prismas, modelados a partir de modelos digitais de elevação e dados de espessura dos sedimentos. Essas correções, que mais tradicionalmente são aplicada às anomalias de Ar Livre, foram aplicada ao distúrbio da gravidade, resultando no chamado Distúrbio de Bouguer. Conforme definido por @segawa1984gravity, essa é uma adaptação do conceito tradicional de anomalia de Bouguer para distúrbios da gravidade em vez de anomalias de Ar Livre, proporcionando uma leitura mais precisa do campo de gravidade, menos afetada pelas ondulações do geoide e mais diretamente relacionada às variações de densidade subterrâneas @segawa1984gravity. Para completar as coreções, a interface crustal Moho também foi estimada com base na hipótese de Airy e modelada com tesseróides para a realização da correção isostática.
 
 
-\chapter{Contexto Geologico}
-
-\vspace{-15mm}
+= Contexto Geologico
 
 Formada durante a colagem orogênica Brasiliana, a Província Mantiqueira se estende ao longo de uma faixa paralela à costa Atlântica, do sul da Bahia até o Uruguai \citep{almeida1981, heilbron2004}. Este sistema orogênico é subdividido em três segmentos geográficos: o segmento setentrional, representado pelo Cinturão Araçuaí; o segmento central, composto pelo Cinturão Ribeira; e o segmento meridional, que inclui o Cinturão Dom Feliciano \citep{heilbron2004}. Cada um desses cinturões orogênicos apresenta um conjunto especifico de terrenos tectono-estratigráficos, no sentido proposto por \citet{howell2013tectonics}, ou seja, pacotes de rochas delimitados por falhas que possuem estratigrafia distinta, definindo um contexto geológico específico. Segundo \citet{howell2013tectonics}, um terreno tectonoestratigráfico é uma peça única no quebra-cabeça orogênico. Devido à mobilidade intrínseca implícita pela existência de um sistema orogenético, os cinturões orogênicos são como caixas de quebra-cabeça preenchidas apenas com algumas das peças de mais de um quebra-cabeça. Identificar tais peças é necessário para compreender a sequência de eventos que resultaram em um dado cinturão orogênico. 
 
@@ -518,20 +516,17 @@ A partir dos dados reduzidos, foi ajustado um interpolador do tipo \textit{Splin
 Esta grade foi reamostrada para coincidir com a grade de referência do embasamento cristalino (\textit{basement\_orth}), garantindo a compatibilidade geométrica entre os diferentes modelos.
 
 
+= Resultados parciais 
 
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-\chapter{Resultados parciais }
-\vspace{-15mm}
 Resultados parciais demonstram que a utilização de validação cruzada k-fold permitiu a definição de parâmetros ótimos, como profundidade e damping, para a interpolação dos dados por fontes equivalentes. Com base nesses parâmetros, foram interpoladas as diferenças entre os dados terrestres e satelitais, resultando em um produto preliminar que combina robustez estatística e alta resolução espacial.
 
-\chapter{Discussão}
-\vspace{-15mm}
+= Discussão
+
 Dado o estágio atual da pesquisa, os métodos já implementados revelam-se robustos e promissores para a conclusão do projeto, destacando-se a exequibilidade técnica e operacional das etapas subsequentes. Espera-se que a continuidade deste trabalho contribua significativamente para o entendimento das características estruturais e geodinâmicas da região estudada, oferecendo subsídios relevantes para futuras investigações geológicas e geofísicas.
+
+#bibliography(
+  "works.bib",
+  title: auto,
+  full: false,
+  style: "associacao-brasileira-de-normas-tecnicas"
+  )
