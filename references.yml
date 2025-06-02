@@ -1,0 +1,45 @@
+harry:
+  type: Book
+  title: Harry Potter and the Order of the Phoenix
+  author: Rowling, J. K.
+  volume: 5
+  page-total: 768
+  date: 2003-06-21
+
+einstein-relativity:
+  type: Book
+  title: 'Relativity: The Special and the General Theory'
+  author: Einstein, Albert
+  publisher: Crown Publishers
+  page-total: 168
+  date: 1961
+
+turing-1936:
+  type: Article
+  title: On Computable Numbers, with an Application to the Entscheidungsproblem
+  author: Turing, Alan M.
+  container-title: Proceedings of the London Mathematical Society
+  volume: 42
+  issue: 1
+  page-range: 230–265
+  date: 1936
+
+nasa-apollo:
+  type: Report
+  title: Apollo 11 Mission Report
+  author: NASA
+  publisher: NASA Technical Reports Server
+  number: SP-238
+  page-total: 183
+  date: 1969-07
+
+smith-chapter:
+  type: Chapter
+  title: Climate Change and Coastal Ecosystems
+  author: Smith, Laura
+  container-title: Environmental Challenges in the 21st Century
+  editor: Johnson, Mark
+  publisher: Green Earth Press
+  page-range: 112–134
+  date: 2018
+
